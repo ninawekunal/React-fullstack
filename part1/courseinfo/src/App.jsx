@@ -27,11 +27,9 @@ const Header = (props) => {
 const Content  = (props) => {
   return (
     <div>
-      {
-        props.parts.map((part, index) => {
-          return <p key={index}>{part} {props.exercises[index]} </p>
-        })
-      }
+      <Part part={props.parts[0]} exercise={props.exercises[0]}/>
+      <Part part={props.parts[1]} exercise={props.exercises[1]}/>
+      <Part part={props.parts[2]} exercise={props.exercises[2]}/>
     </div>
   );
 }
@@ -46,6 +44,10 @@ const Total = (props) => {
       <p> Number of exercises {total} </p>
     </div>
   );
+}
+
+const Part = (props) => {
+  return <p>{props.part} {props.exercise}</p>
 }
 
 export default App
